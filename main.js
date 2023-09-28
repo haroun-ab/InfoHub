@@ -1,19 +1,30 @@
-console.log('Hello from Electron 👋')
-const { app, BrowserWindow } = require('electron');
 
-function createWindow() {
-  // Créez une fenêtre de navigateur Electron
-  const mainWindow = new BrowserWindow({
+const { app, BrowserWindow } = require('electron')
+
+const createWindow = () => {
+  const win = new BrowserWindow({
     width: 800,
     height: 600,
-    webPreferences: {
-      nodeIntegration: true, // Active l'intégration de Node.js dans la fenêtre
-    },
-  });
+    transparent: true, 
+    // focusable: true
+    // backgroundMaterial: 'acrylic',
+  })
 
-  // Chargez un fichier HTML dans la fenêtre
-  mainWindow.loadFile('index.html');
+  win.loadFile('index.html')
 }
 
-// Événement déclenché lorsque l'application est prête
-app.whenReady().then(createWindow);
+app.whenReady().then(() => {
+  createWindow()
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) {
+      createWindow()
+    }
+  })
+})
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
