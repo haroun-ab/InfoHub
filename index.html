@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="style/style.css">
+    <title>InfoHub</title>
+    
+  </head>
+  <body>
+    <div class="background"></div>
+    
+    <div class="loader">
+        <div class="logo">
+            <span>Info</span><span>Hub</span>
+        </div>
+        <div class="lds-ripple"><div></div><div></div></div>
+    </div>
+    <main>
+    </main>
+  </body>
+</html>

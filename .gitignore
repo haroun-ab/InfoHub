@@ -1,0 +1,16 @@
+# Ignorer les fichiers de compilation
+/node_modules/
+/dist/
+
+# Ignorer les fichiers de configuration locaux
+.env
+
+# Ignorer les fichiers de sauvegarde
+*.bak
+*.swp
+
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer les fichiers de dépendance créés par npm
+package-lock.json
