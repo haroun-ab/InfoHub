@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "electron": "^26.2.3"
+    "electron": "^26.2.3",
+    "newsapi": "^2.4.1"
   }
 }
