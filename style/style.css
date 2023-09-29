@@ -131,3 +131,30 @@ article img{
     object-fit: cover;
     border: none;
 }
+
+/*///////////////////////// PAGE ACTU DU JOUR///////////////////////*/
+
+#actu{
+    text-align: left;
+    color:  white;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
+  
+}
+
+article{
+    background: #3735BD;
+    padding: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+
+
+

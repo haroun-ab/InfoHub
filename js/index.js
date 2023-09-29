@@ -2,8 +2,6 @@
 const loader = document.querySelector('.loader');
 
 
-
-
 setTimeout(() => {
     document.querySelector('body').innerHTML = `<header>
     <div>search</div>
@@ -11,8 +9,6 @@ setTimeout(() => {
     loader.remove();
     getapi();
 }, 3000);
-
-
 /////////////////////////////////////////////////
 async function getapi() {
     try {
@@ -31,7 +27,6 @@ async function getapi() {
     console.log(articleList[1]);
             articleList.forEach(content => {
                 document.querySelector('main').innerHTML += `<article>
-                
                 <img src="${content.urlToImage}">
                     <div>
                     <p>${content.title}</p>
@@ -39,14 +34,26 @@ async function getapi() {
                     </div>
                 </article>`;
             });
-
-            
         }
         
       } catch (error) {
         console.error('Erreur lors de la requête fetch :', error);
       }
 
+
+      articleList.forEach((content, index) => {
+        const articleContainer = articleContainers[index];
+        articleContainer.innerHTML = `
+          <article>
+            <img src="${content.urlToImage}">
+            <div>
+              <p>${content.title}</p>
+              <p>${content.source.name}</p>
+            </div>
+          </article>
+        `;
+      });
+      
 
 // const url = 'https://google-news13.p.rapidapi.com/latest?lr=fr-FR';
 // const options = {
