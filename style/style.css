@@ -139,22 +139,27 @@ article img{
     color:  white;
 }
 
-.container{
+.container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap:10px;
-  
-}
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
 
-article{
+  .container > div {
     background: #3735BD;
     padding: 40px;
     text-align: center;
     border: 1px solid #ccc;
     margin-bottom: 30px;
     border-radius: 20px;
-}
+  }
 
-
+  .article {
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px;
+  }
+  
 
 
