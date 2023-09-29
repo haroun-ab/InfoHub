@@ -5,24 +5,14 @@
     --bg2 : rgba(139, 146, 167, 0.97);
 }
 
-body {
+html {
     margin: 0;
-}
-
-.background{
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
+    background: linear-gradient(217deg, hsla(240, 100%, 50%, 0.850), rgba(0,0,255,0.226) 70%),
+    linear-gradient(127deg, hsla(182, 92%, 33%, 0.850), #079ca13a 70%),
+    linear-gradient(336deg, hsla(0, 100%, 50%, 0.850), rgba(255, 0, 0, 0.226) 70%);
     min-height: 100%;
-    z-index: -100;
-    filter: blur(25px);
-    background: linear-gradient(217deg, #0000fff2, rgba(0,0,255,0.226) 70%),
-    linear-gradient(127deg, #079ca1f2, #079ca13a 70%),
-    linear-gradient(336deg, #ff0000f2, rgba(255, 0, 0, 0.226) 70%);
+    background-repeat:repeat;
 }
-
-
 
 /*Logo*/
 .logo {
@@ -32,18 +22,30 @@ body {
 
 .logo span:first-child{
     color: white;
-    margin: 0 3px;
+    margin: 0 1%;
 
 }
 
 .logo span:last-child{
     color: #3735BD;
     background: white;
-    border-radius: 20px;
+    border-radius: 50% 30% ;
     padding: 5px;
-    margin: 0 3px;
-
+    margin: 0 1%;
 }
+
+/*Header*/
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header .logo{
+    font-size: 30px;
+}
+
 
 /*Loader*/
 .loader{

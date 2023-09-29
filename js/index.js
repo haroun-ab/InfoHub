@@ -5,6 +5,9 @@ const loader = document.querySelector('.loader');
 
 
 setTimeout(() => {
+    document.querySelector('body').innerHTML = `<header>
+    <div>search</div>
+    <div class="logo"><span>Info</span><span>Hub</span></div></header>`
     loader.remove();
     getapi();
 }, 3000);
