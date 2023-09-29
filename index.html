@@ -3,21 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://google-news13.p.rapidapi.com/; connect-src 'self' https://soccer.sportmonks.com https://api.allorigins.win; img-src *;">
+
+   
     <link rel="stylesheet" href="css/style.css">
 
     <title>INFOHUB !</title>
   </head>
   <body>
-    <h1>L'appli desktop que nous vous proposons est construite avec l'API "NewsAPI". C'est une API qui traite de l'actualié internationale </h1>
-    <p> C'est NewsAPI  Eh oui!👋</p>
+    <h1>Avec INFOHUB, soyez au coeur de l'actualité mondiale!👋 </h1>
+    <p> Les articles à la UNE... </p>
+    
+    <!-- Ajoutez ceci dans votre fichier index.html où vous voulez afficher les articles -->
+<div id="article-list"></div>
+<button id="load-articles">Charger les articles</button>
+<div id="article-container"></div>
+<p><img src="https://urlToImage.com/image.jpg" alt="Image de l'article"></p>
+
 
       <script src="js/script.js"></script>
   </body>
