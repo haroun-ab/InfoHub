@@ -3,7 +3,7 @@ async function actuDuJour(){
 
   const containerElement = document.querySelector('.container');
   try {
-    const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent("https://newsapi.org/v2/top-headlines?country=us&apiKey=6147950b50674ba4a220b9a00c9cd1f0")}`);
+    const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${APIKEY}`)}`);
     if (!response.ok) {
       throw new Error('Network response was not ok');
     }

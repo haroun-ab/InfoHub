@@ -38,7 +38,7 @@ async function searchActu() {
         console.log(timeValue);
                 try {
                     document.querySelector('main').innerHTML += '<div class="loader"><div class="lds-ripple"><div></div><div></div></div></div>';
-            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://newsapi.org/v2/everything?language=en&sortBy=popularity&q=${searchValue}&from=${timeValue}&apiKey=e3bd79486fcc43da808646b5004f91df`)}`, {
+            const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://newsapi.org/v2/everything?language=en&sortBy=popularity&q=${searchValue}&from=${timeValue}&apiKey=${APIKEY}`)}`, {
             method: 'GET',
             });
             if (!response.ok) {

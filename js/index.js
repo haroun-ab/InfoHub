@@ -1,3 +1,6 @@
+// clé d'API
+
+const APIKEY = '6147950b50674ba4a220b9a00c9cd1f0' 
 // Disparition loader
 const loader = document.querySelector('.loader');
 

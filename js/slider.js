@@ -3,7 +3,7 @@
 
 async function topDeLactuSlider() {
     try {
-        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent("https://newsapi.org/v2/top-headlines?country=us&apiKey=e3bd79486fcc43da808646b5004f91df")}`, {
+        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${APIKEY}`)}`, {
           method: 'GET',
           
         });
