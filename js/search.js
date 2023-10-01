@@ -49,7 +49,7 @@ async function searchActu() {
 
                 const contentResponse = await response.json();
                 const articleList = JSON.parse(contentResponse.contents).articles;
-
+                console.log(articleList);
                 document.querySelector('#actu').innerHTML = ``
                 document.querySelector('#slider').innerHTML = ``
 
