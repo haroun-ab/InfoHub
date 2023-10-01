@@ -1,6 +1,5 @@
 
 const { app, BrowserWindow, ipcRenderer } = require('electron')
-const NewsAPI = require('newsapi');
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -11,6 +10,7 @@ const createWindow = () => {
       nodeIntegration: true, // Cela permet d'utiliser require dans le fichier HTML
       contextIsolation: false, // Peut être nécessaire selon votre version d'Electron
     },
+    icon:'img/app-icon.png'
   });
 
   win.loadFile('index.html')
@@ -32,12 +32,3 @@ app.on('window-all-closed', () => {
   }
 })
 
-
-
-
-// const { ipcRenderer } = require('electron');
-
-//       ipcRenderer.on('news-data', (event, data) => {
-//         const mainElement = document.getElementById('news-data');
-//         mainElement.innerHTML = JSON.stringify(data, null, 2);
-//       });

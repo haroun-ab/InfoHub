@@ -1,70 +1,34 @@
 // Disparition loader
 const loader = document.querySelector('.loader');
 
+// configuration des dates
 
-
-
+console.log((new Date(Date.now() - 86400000)).toISOString().split('T')[0]);
 setTimeout(() => {
-    document.querySelector('body').innerHTML = `<header>
-    <div>search</div>
-    <div class="logo"><span>Info</span><span>Hub</span></div></header>`
+    document.querySelector('header').innerHTML += `
+    <div class="search">
+      <i class="fa-solid fa-search"></i>
+      <input type="text"/>
+      <select>
+        <option value="${(new Date(Date.now() - 86400000)).toISOString().split('T')[0]}">24 hours ago</option>
+        <option value="${(new Date(Date.now() - 86400000 * 4)).toISOString().split('T')[0]}">3 days ago</option>
+        <option value="${(new Date(Date.now() - 86400000 * 8)).toISOString().split('T')[0]}">1 week ago</option>
+        <option value="${(new Date(Date.now() - 86400000 * 15)).toISOString().split('T')[0]}">2 week ago</option>
+        <option value="${(new Date(Date.now() - 86400000 * 31)).toISOString().split('T')[0]}">1 month ago</option>
+      </select>
+    </div>
+    <h1 class="logo"><span>Info</span><span>Hub</span></h1>`
     loader.remove();
-    getapi();
-}, 3000);
-
-
+    actuDuJour();
+    topDeLactuSlider();
+    searchActu();
+}, 1000);
+const a =  Date.now() - 84600
+console.log(Date.now());
+console.log(Date.now() - 84600);
+console.log(a);
 /////////////////////////////////////////////////
-async function getapi() {
-    try {
-        const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent("https://newsapi.org/v2/top-headlines?country=us&apiKey=6147950b50674ba4a220b9a00c9cd1f0")}`, {
-          method: 'GET',
-          
-        });
-        if (!response.ok) {
-            console.log(response)
-
-          throw new Error('Network response was not ok');
-        }
-        else {
-            const contentResponse = await response.json();
-            const articleList = JSON.parse(contentResponse.contents).articles;
-    console.log(articleList[1]);
-            articleList.forEach(content => {
-                document.querySelector('main').innerHTML += `<article>
-                
-                <img src="${content.urlToImage}">
-                    <div>
-                    <p>${content.title}</p>
-                    <p>${content.source.name}</p>
-                    </div>
-                </article>`;
-            });
-
-            
-        }
-        
-      } catch (error) {
-        console.error('Erreur lors de la requête fetch :', error);
-      }
 
 
-// const url = 'https://google-news13.p.rapidapi.com/latest?lr=fr-FR';
-// const options = {
-// 	method: 'GET',
-// 	headers: {
-// 		'X-RapidAPI-Key': '59edeafd1emshaff249be04e1192p1fafb0jsnd0659e797c1c',
-// 		'X-RapidAPI-Host': 'google-news13.p.rapidapi.com'
-// 	}
-// };
 
-// try {
-// 	const response = await fetch(url, options);
-// 	const result = await response.json();
-// 	console.log(result);
-//     document.querySelector('main').innerHTML = result.items
-// } catch (error) {
-// 	console.error(error);
-// }
-
-}
 
