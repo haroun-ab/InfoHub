@@ -3,17 +3,22 @@ const { app, BrowserWindow, ipcRenderer } = require('electron')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    minWidth: 1000,
-    minHeight: 700,
+    minWidth: 1400,
+    minHeight: 900,
     transparent: true,
     webPreferences: {
-      nodeIntegration: true, // Cela permet d'utiliser require dans le fichier HTML
-      contextIsolation: false, // Peut être nécessaire selon votre version d'Electron
+      nodeIntegration: true, 
+      contextIsolation: false, 
+      // webPreferences: {
+      //   preload: path.join(__dirname, "preload.js"),
+      // },
     },
     icon:'img/app-icon.png'
   });
 
   win.loadFile('index.html')
+  win.webContents.openDevTools();
+
 }
 
 app.whenReady().then(() => {

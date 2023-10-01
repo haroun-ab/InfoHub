@@ -10,17 +10,17 @@ setTimeout(() => {
       <i class="fa-solid fa-search"></i>
       <input type="text"/>
       <select>
-        <option value="${(new Date(Date.now() - 86400000)).toISOString().split('T')[0]}">24 hours ago</option>
-        <option value="${(new Date(Date.now() - 86400000 * 4)).toISOString().split('T')[0]}">3 days ago</option>
-        <option value="${(new Date(Date.now() - 86400000 * 8)).toISOString().split('T')[0]}">1 week ago</option>
-        <option value="${(new Date(Date.now() - 86400000 * 15)).toISOString().split('T')[0]}">2 week ago</option>
-        <option value="${(new Date(Date.now() - 86400000 * 31)).toISOString().split('T')[0]}">1 month ago</option>
+        <option value="${(new Date(Date.now() - 86400000)).toISOString().split('T')[0]} - last 24 hours">Last 24 hours</option>
+        <option value="${(new Date(Date.now() - 86400000 * 4)).toISOString().split('T')[0]} - last 3 days">Last 3 days</option>
+        <option value="${(new Date(Date.now() - 86400000 * 8)).toISOString().split('T')[0]} - last week">Last week</option>
+        <option value="${(new Date(Date.now() - 86400000 * 15)).toISOString().split('T')[0]} - last two weeks"></option>
+        <option value="${(new Date(Date.now() - 86400000 * 30)).toISOString().split('T')[0]} - last month">Last month</option>
       </select>
     </div>
     <h1 class="logo"><span>Info</span><span>Hub</span></h1>`
     loader.remove();
-    actuDuJour();
     topDeLactuSlider();
+    actuDuJour();
     searchActu();
 }, 1000);
 const a =  Date.now() - 84600
@@ -28,7 +28,50 @@ console.log(Date.now());
 console.log(Date.now() - 84600);
 console.log(a);
 /////////////////////////////////////////////////
+function convertDate(apiArticleDate) {
+  let displayedDate = ""
+  const articleDate = apiArticleDate.split('T')[0];
 
+  const todayDate = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+  const twoDaysAgoDate = new Date(Date.now() - 86400000 * 2).toISOString().split('T')[0];
+  const threeDaysAgoDate = new Date(Date.now() - 86400000 * 3).toISOString().split('T')[0];
+  const fourDaysAgoDate = new Date(Date.now() - 86400000 * 4).toISOString().split('T')[0];
+  const fiveDaysAgoDate = new Date(Date.now() - 86400000 * 5).toISOString().split('T')[0];
+  const sixDaysAgoDate = new Date(Date.now() - 86400000 * 6).toISOString().split('T')[0];
+  const sevenDaysAgoDate = new Date(Date.now() - 86400000 * 7).toISOString().split('T')[0];
+  switch (articleDate) {
+      case todayDate:
+          displayedDate = "Today"
+          break;
+      case twoDaysAgoDate:
+          displayedDate = "Yesterday"
+          break;
+      case threeDaysAgoDate:
+          displayedDate = "3 days ago"
+          break;
+      case fourDaysAgoDate:
+          displayedDate = "4 days ago"
+          break;
+      case fiveDaysAgoDate:
+          displayedDate = "5 days ago"
+          break;
+      case sixDaysAgoDate:
+          displayedDate = "6 days ago"
+          break;
+      case sevenDaysAgoDate:
+          displayedDate = "a week ago"
+          break;
+      default:
+          let month = `${new Date(articleDate).toDateString().split(' ')[1]}`;
+          let day = `${new Date(articleDate).toDateString().split(' ')[2]}`;
+
+          displayedDate = `${month}-${day}`;
+          break;
+  }
+ 
+  console.log(displayedDate);
+  return `${displayedDate}`
+}
 
 
 

@@ -50,6 +50,7 @@ header .logo{
     font-size: 30px;
 }
 
+
 .fa-search{
     color: white;
     font-size: 27px;
@@ -63,6 +64,11 @@ header .logo{
     background: white;
     color: #4543e9;
 }
+
+#search-results{
+    width: 90%;
+    margin: 20px auto;
+}
 /*Loader*/
 .loader{
     position: absolute;
@@ -73,15 +79,6 @@ header .logo{
     align-items: center;
     flex-direction: column;
     animation: disappear  200ms 4800ms  forwards;
-}
-
-@keyframes disappear{
-    0%{
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
 }
 
 .loader .logo{
@@ -150,10 +147,11 @@ article img{
 
 /*Slider*/
 
-.slider{
+#slider{
     width: 90%;
-    margin: 20px auto;
+    margin: 50px auto;
 }
+
 .diapo {
     position: relative;
     overflow: hidden;
@@ -265,4 +263,72 @@ article img{
 .description-img span:last-child{
     font-size: 17px;
     color: #c2c2c2;
+}
+/*///////////////////////// PAGE ACTU DU JOUR///////////////////////*/
+
+#actu{
+    width: 90%;
+    margin: 50px auto;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+  }
+  .article img{
+    min-width: 100px;
+    min-height: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 7% ;
+  }
+
+  .article {
+    padding: 10px;
+    margin: 10px;
+    background: linear-gradient(90deg, #163da070,#00000070 );
+    box-shadow: 1px 3px 5px rgb(5, 9, 77);
+    text-align: center;
+    border-radius: 20px;
+    display: flex;
+    color: white;
+    text-decoration: none;
+    transition: 500ms;
+  }
+  
+  .article:hover {
+   transform: scale(1.05);
+   background: linear-gradient(90deg, #00000070 ,#163da070);
+
+  }
+
+.article div{
+    text-align: left;
+    margin: 0 10px ;
+    position: relative;
+    width: 100%;
+}
+
+.article h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.article .source{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #c2c2c2
+}
+
+.article .date{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    color: #c2c2c2;
+    font-size: 14px;
 }
