@@ -52,22 +52,37 @@ header .logo{
 
 
 .fa-search{
-    color: white;
-    font-size: 27px;
+    background: white;
+    color: #4543e9;    font-size: 27px;
     transition: 500ms;
     padding: 6px;
-    border-radius: 12px;
+    border-radius:  12px 0 0 12px;
     cursor: pointer;
 }
 
-.fa-search:hover{
-    background: white;
-    color: #4543e9;
-}
+
 
 #search-results{
     width: 90%;
     margin: 20px auto;
+}
+
+input{
+  border: none;
+  border-radius:  0 12px 12px 0;
+  outline: none;
+}
+
+
+select{
+  margin-left: 5px;
+  border-radius:  12px 12px 12px 12px;
+  border: none;
+  background: white;
+}
+
+.search{
+  display: flex;
 }
 /*Loader*/
 .loader{

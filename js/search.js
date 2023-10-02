@@ -9,12 +9,14 @@ async function searchActu() {
     let timeToDisplayValue = timeInput.value.split(" - ")[1];
 
     console.log(timeToDisplayValue);
+        
+  
     searchInput.onkeyup = () => {
         searchValue = searchInput.value;
         timeValue = timeInput.value.split(" - ")[0];
         timeToDisplayValue = timeInput.value.split(" - ")[1];
         console.log(searchValue);
-        if (searchValue.length > 0 ) {
+        if (searchValue.length > 0) {
             getSearchResult(searchValue, timeValue, timeToDisplayValue)
         }else {
             topDeLactuSlider();
