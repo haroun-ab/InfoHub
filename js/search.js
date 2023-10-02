@@ -7,9 +7,12 @@ async function searchActu() {
     let searchValue = searchInput.value;
     let timeValue = timeInput.value.split(" - ")[0];
     let timeToDisplayValue = timeInput.value.split(" - ")[1];
+
     console.log(timeToDisplayValue);
     searchInput.onkeyup = () => {
         searchValue = searchInput.value;
+        timeValue = timeInput.value.split(" - ")[0];
+        timeToDisplayValue = timeInput.value.split(" - ")[1];
         console.log(searchValue);
         if (searchValue.length > 0 ) {
             getSearchResult(searchValue, timeValue, timeToDisplayValue)
@@ -20,7 +23,9 @@ async function searchActu() {
     }
 
     timeInput.onchange = () => {
-        timeValue = timeInput.value;
+        searchValue = searchInput.value;
+        timeValue = timeInput.value.split(" - ")[0];
+        timeToDisplayValue = timeInput.value.split(" - ")[1];
         console.log(timeValue);
         if (searchValue.length > 0 ) {
             getSearchResult(searchValue, timeValue, timeToDisplayValue)
@@ -36,8 +41,8 @@ async function searchActu() {
 
         console.log(searchValue);
         console.log(timeValue);
-                try {
-                    document.querySelector('main').innerHTML += '<div class="loader"><div class="lds-ripple"><div></div><div></div></div></div>';
+        try {
+            document.querySelector('main').innerHTML += '<div class="loader"><div class="lds-ripple"><div></div><div></div></div></div>';
             const response = await fetch(`https://api.allorigins.win/get?url=${encodeURIComponent(`https://newsapi.org/v2/everything?language=en&sortBy=popularity&q=${searchValue}&from=${timeValue}&apiKey=${APIKEY}`)}`, {
             method: 'GET',
             });
@@ -66,10 +71,10 @@ async function searchActu() {
                             if (articleList[i].urlToImage != null && countResult < 21) {
                                 countResult++;
                                 document.querySelector('.container').innerHTML += 
-                                `<a class="article" href="${articleList[i].url}">
+                                `<a class="article" href="${articleList[i].url}" onclick="window.open('${articleList[i].url} ','popup','width=600,height=600,scrollbars=no,resizable=no'); return false;">
                                 <img src="${articleList[i].urlToImage}" alt="Image de l'article">
                                 <div>
-                                    <h3>${articleList[i].title}</h3>
+                                    <h3>${articleList[i].title.split(' - ')[0]}</h3>
                                     <span class="source">${articleList[i].source.name}</span>
                                     <span class="date">${convertDate(articleList[i].publishedAt)}</span>
                                 </div>

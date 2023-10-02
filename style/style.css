@@ -6,7 +6,7 @@ html {
     linear-gradient(127deg, hsla(182, 92%, 33%, 0.850), #079ca13a 70%),
     linear-gradient(336deg, hsla(0, 100%, 50%, 0.850), rgba(255, 0, 0, 0.226) 70%);
     min-height: 100%;
-    background-repeat:repeat;
+    background-repeat:round;
 }
 
 *{
@@ -289,7 +289,7 @@ article img{
   .article {
     padding: 10px;
     margin: 10px;
-    background: linear-gradient(90deg, #163da070,#00000070 );
+    background: url('../img/blur.png'), linear-gradient(90deg, #163da070,#00000070 ) ;
     box-shadow: 1px 3px 5px rgb(5, 9, 77);
     text-align: center;
     border-radius: 20px;
@@ -301,7 +301,7 @@ article img{
   
   .article:hover {
    transform: scale(1.05);
-   background: linear-gradient(90deg, #00000070 ,#163da070);
+   background: url('../img/blur.png'), linear-gradient(90deg, #00000070 ,#163da070);
 
   }
 
@@ -332,3 +332,4 @@ article img{
     color: #c2c2c2;
     font-size: 14px;
 }
+/*///////////////////////// Input ///////////////////////*/

@@ -16,7 +16,7 @@ setTimeout(() => {
         <option value="${(new Date(Date.now() - 86400000)).toISOString().split('T')[0]} - last 24 hours">Last 24 hours</option>
         <option value="${(new Date(Date.now() - 86400000 * 4)).toISOString().split('T')[0]} - last 3 days">Last 3 days</option>
         <option value="${(new Date(Date.now() - 86400000 * 8)).toISOString().split('T')[0]} - last week">Last week</option>
-        <option value="${(new Date(Date.now() - 86400000 * 15)).toISOString().split('T')[0]} - last two weeks"></option>
+        <option value="${(new Date(Date.now() - 86400000 * 15)).toISOString().split('T')[0]} - last two weeks">Last two weeks</option>
         <option value="${(new Date(Date.now() - 86400000 * 30)).toISOString().split('T')[0]} - last month">Last month</option>
       </select>
     </div>
