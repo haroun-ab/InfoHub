@@ -6,7 +6,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     minWidth: 1000,
     minHeight: 700,
-    transparent: true,
+    transparent: false,
     webPreferences: {
       nodeIntegration: true, // Cela permet d'utiliser require dans le fichier HTML
       contextIsolation: false, // Peut être nécessaire selon votre version d'Electron
@@ -31,8 +31,6 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
-
 
 
 // const { ipcRenderer } = require('electron');
