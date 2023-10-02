@@ -1,3 +1,4 @@
+
 // preload.js
 
 // Toutes les API Node.js sont disponibles dans le processus de préchargement.
@@ -12,3 +13,9 @@ window.addEventListener('DOMContentLoaded', () => {
       replaceText(`${dependency}-version`, process.versions[dependency])
     }
   })
+
+    for (const dependency of ['chrome', 'node', 'electron']) {
+      replaceText(`${dependency}-version`, process.versions[dependency])
+    }
+
+
