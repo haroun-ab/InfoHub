@@ -32,7 +32,6 @@ app.on('window-all-closed', () => {
   }
 })
 
-
 // const { ipcRenderer } = require('electron');
 
 //       ipcRenderer.on('news-data', (event, data) => {
